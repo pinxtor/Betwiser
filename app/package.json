@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "bun --env-file=./config/.env.local run --watch src/index.ts",
+    "generate": "drizzle-kit generate:pg --schema=./src/schemas --out=./src/db/scripts",
+    "migrate-local": "bun --env-file=./config/.env.local run src/db/migrator.ts"
+  },
+  "dependencies": {
+    "@elysiajs/swagger": "^0.8.5",
+    "drizzle-orm": "^0.29.3",
+    "elysia": "latest",
+    "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.14"
+  },
+  "module": "src/index.js"
+}
