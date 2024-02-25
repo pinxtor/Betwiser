@@ -1,9 +1,7 @@
 import { t } from "elysia";
 
-const userSchema = t.Object({
-    id: t.String(),
+export const userSchema = t.Object({
     firstname: t.String(),
     lastname: t.String(),
+    email: t.String()
 });
-
-export default userSchema
